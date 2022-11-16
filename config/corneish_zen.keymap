@@ -9,51 +9,362 @@
   };
 };
 
+#define QWERTY 0
+#define NUMPAD 1
+#define SYMBOL 2
+#define ARROWS 3
+
+&mt {
+    tapping-term-ms = <250>;
+    flavor = "tap-preferred";
+};
+
 / {
+
+/*      
+ *       BEHAVIORS                      =====================================================================
+ */
+
+      behaviors {   
+
+/*       Right Hand Layer Toggles       -------------------------------------
+ *
+ *       QWERTY LAYER   
+ *
+ *       Usage: &td_RT_QWE
+ *       Hold: Momentary NUMPAD Layer
+ *       Double Tap: Toggle NUMPAD Layer
+ *       Tripple Tap: Toggle ARROWS Layer
+ */
+
+         td_RT_QWE: tap_dance_0 {    
+               compatible = "zmk,behavior-tap-dance";  
+               label = "TAP_DANCE_RT_QWERTY";   
+               #binding-cells = <0>;    
+               tapping-term-ms = <300>;    
+               bindings = <&mo NUMPAD>, <&tog NUMPAD>, <&tog ARROWS>; 
+               };
+ 
+/*       NUMPAD LAYER   
+ *
+ *       Usage: &td_RT_NUM
+ *       Hold: Momentary QWERTY Layer
+ *       Double Tap: Toggle ARROWS Layer
+ */        
+
+         td_RT_NUM: tap_dance_1 {    
+               compatible = "zmk,behavior-tap-dance";  
+               label = "TAP_DANCE_RT_NUMPAD";   
+               #binding-cells = <0>;    
+               tapping-term-ms = <300>;    
+               bindings = <&mo NUMPAD>, <&tog NUMPAD>; 
+               };
+ 
+
+/*       Left Hand Layer Toggles       -------------------------------------
+ *
+ *       QWERTY LAYER   
+ *
+ *       Usage: &td_LT_QWE
+ *       Hold: Momentary NUMPAD Layer
+ *       Double Tap: Toggle ARROWS Layer
+ */
+
+         td_LT_QWE: tap_dance_2 {    
+               compatible = "zmk,behavior-tap-dance";  
+               label = "TAP_DANCE_LT_QWERTY";   
+               #binding-cells = <0>;    
+               tapping-term-ms = <300>;    
+               bindings = <&mo SYMBOL>, <&tog ARROWS>; 
+               };
+ 
+/*       NUMPAD LAYER   
+ *
+ *       Usage: &td_LT_NUM
+ *       Hold: Momentary QWERTY Layer
+ *       Double Tap: Toggle QWERTY Layer
+ */        
+
+         td_LT_NUM: tap_dance_3 {    
+               compatible = "zmk,behavior-tap-dance";  
+               label = "TAP_DANCE_LT_NUMPAD";   
+               #binding-cells = <0>;    
+               tapping-term-ms = <300>;    
+               bindings = <&mo QWERTY>, <&tog QWERTY>; 
+               };
+ 
+
+/*       Left SHIFT Key                   -------------------------------------
+ *
+ *       Usage: &td_shift
+ *       Hold: SHIFT
+ *       Double Tap: Caps Lock
+ *       Tripple Tap: Caps Word
+ */
+
+         td_shift: tap_dance_4 {
+              compatible = "zmk,behavior-tap-dance";
+              label = "TAP_DANCE_SHIFT";
+              #binding-cells = <0>;
+              tapping-term-ms = <300>;
+              bindings = <&kp LSHFT>, <&kp CAPSLOCK>, <&caps_word>;
+         };
+
+/*
+ *       Tab Esc Win                     -------------------------------------
+ *
+ *       Usage: &td_tab
+ *       Hold: Control
+ *       Double Tap: Alt+Tab
+ */
+
+         td_tab: tap_dance_5 {
+              compatible = "zmk,behavior-tap-dance";
+              label = "TAP_DANCE_TAB";
+              #binding-cells = <0>;
+              tapping-term-ms = <300>;
+              bindings = <&kp TAB>, <&kp LWIN>, <&kp ESC>;
+         };         
+
+/*
+ *       Control and Alt Tab                     -------------------------------------
+ *
+ *       Usage: &td_ctrl
+ *       Hold: Control
+ *       Double Tap: Alt+Tab
+ */
+
+         td_ctrl: tap_dance_6 {
+              compatible = "zmk,behavior-tap-dance";
+              label = "TAP_DANCE_CONTROL";
+              #binding-cells = <0>;
+              tapping-term-ms = <300>;
+              bindings = <&kp LCTRL>, <&kp LA(TAB)>, <&mac_split>;
+         };  
+
+/*
+ *       Backspace                     -------------------------------------
+ *
+ *       Usage: &td_backspace
+ *       Hold: Backspace
+ *       Double Backspace
+ *       Tripple Tap: Ctrl + Backspace
+ */
+
+         td_backspace: tap_dance_7 {
+              compatible = "zmk,behavior-tap-dance";
+              label = "TAP_DANCE_BACKSPACE";
+              #binding-cells = <0>;
+              tapping-term-ms = <100>;
+              bindings = <&kp BSPC>, <&mac_db>, <&kp LC(BSPC)>;
+         };  
+
+/*
+ *       Semicolon                     -------------------------------------
+ *
+ *       Usage: &td_comma
+ *       Hold: Comma
+ *       Double Ctrl + COMMA
+ */
+
+         td_comma: tap_dance_8 {
+              compatible = "zmk,behavior-tap-dance";
+              label = "TAP_DANCE_COMMA";
+              #binding-cells = <0>;
+              tapping-term-ms = <300>;
+              bindings = <&kp COMMA>, <&kp LC(COMMA)>;
+         };  
+
+/*
+ *       double zero hold tap                     -------------------------------------
+ *
+ *       Usage: &ht0 LC(V) 0
+ */
+
+         ht0: holdtap0 {
+               compatible = "zmk,behavior-hold-tap";
+               label = "HT_ZERO";
+               #binding-cells = <2>;
+               tapping-term-ms = <200>; 
+               quick-tap-ms = <0>;
+               flavor = "tap-preferred";
+               bindings = <&kp>, <&mac_dz>;
+         };
+
+
+/*
+ *       slipt screen hold tap                     -------------------------------------
+ *
+ *       Usage: &ht1 0 APOSTROPHE
+ */
+
+         ht1: holdtap1 {
+               compatible = "zmk,behavior-hold-tap";
+               label = "HT_SPLIT";
+               #binding-cells = <2>;
+               tapping-term-ms = <200>; 
+               quick-tap-ms = <0>;
+               flavor = "tap-preferred";
+               bindings = <&mac_split>, <&kp>;
+         };
+
+/*
+ *       slipt screen hold tap                     -------------------------------------
+ *
+ *       Usage: &ht3 LC(V) 0 
+ */
+
+         ht3: holdtap3 {
+               compatible = "zmk,behavior-hold-tap";
+               label = "HT_GST";
+               #binding-cells = <2>;
+               tapping-term-ms = <200>; 
+               quick-tap-ms = <0>;
+               flavor = "tap-preferred";
+               bindings = <&kp>, <&mac_gst>;
+         };
+
+
+
+      };
+
+/*      
+ *       MACROS                           =====================================================================
+ */
+
+macros { 
+
+/*       
+ *       Double Zero   
+ *
+ *       Usage: &mac_dz
+ */
+
+        mac_dz: mac_doublezero {
+            label = "MAC_DOUBLEZERO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_tap &kp N0 &kp N0>;
+        };
+
+/*       
+ *       Double Backspace   
+ *
+ *       Usage: &mac_db
+ */
+
+        mac_db: mac_doubleback {
+            label = "MAC_DOUBLEBACK";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_tap &kp BSPC &kp BSPC>;
+        };
+
+/*       
+ *       Split Screen   
+ *
+ *       Usage: &mac_split
+ *
+ */
+        mac_split: mac_splitscreen {
+            label = "MAC_SPLITSCREEN";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                 = <&macro_tap &kp LG(LEFT_ARROW)>
+                 , <&macro_wait_time 500>
+                 , <&macro_tap &kp LA(TAB)>
+                 , <&macro_wait_time 500>
+                 , <&macro_tap &kp LG(RIGHT_ARROW)>
+                 ;
+        };
+    
+
+    };
+ 
+/*       
+ *       GST   
+ *
+ *       Usage: &mac_gst
+ */
+
+        mac_gst: mac_geest {
+            label = "MAC_GST";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB &kp G &kp S &kp T &kp TAB &kp KP_N1 &kp TAB>;
+        };
+
+/*       
+ *       xeroGST   
+ *
+ *       Usage: &mac_xeroGST
+ */
+
+        mac_xeroGST: mac_xeroogst {
+            label = "MAC_XEROGST";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(A) &kp LC(C) &kp TAB &kp G &kp S &kp T &kp TAB &kp KP_N1 &kp TAB &kp LC(V) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp END &kp MINUS &kp LC(V) &kp TAB >;
+        };
+
+/*       
+ *      KEYMAP                            =====================================================================
+ *      &kp - normal key press
+ *      &mt - long key press, normal key press
+ *      &td - tap dance - defined above (double tap, tripple tap, etc)
+ *      &lt - layer tap - 
+ */
+
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                qwerty_layer {
                         label = "QWERTY";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-                        label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &td_tab        &mt QMARK Q    &mt AT W       &mt LPAR E        &mt RPAR R        &mt GRAVE T                              &kp Y      &kp U       &mt PAGE_UP I        &kp O        &kp P       &td_backspace
+   &td_ctrl       &kp A          &mt LC(S) S    &mt LC(C) D       &mt LC(V) F       &mt LC(KP_PLUS) G                        &kp H      &mt HOME J  &mt PAGE_DOWN K      &mt END L    &kp SEMI    &ht1 0 APOSTROPHE 
+   &td_shift      &mt LC(Z) Z    &mt LC(X) X    &mt LBRC C        &mt RBRC V        &mt TILDE  B                             &kp N      &kp M       &td_comma            &kp DOT      &kp RALT    &kp KP_ENTER
+                                                &mt LWIN DEL      &td_LT_QWE        &lt NUMPAD SPACE                         &lt NUMPAD SPACE  &td_RT_QWE  &lt ARROWS TAB
+
                         >;
                 };
 
-                raise_layer {
-                        label = "SYMBOL";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                numpad_layer {
+                        label = "NUMPAD";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &td_backspace  &mt QMARK KP_MULTIPLY   &mt AT KP_N7     &mt LPAR KP_N8    &mt RPAR KP_N9     &mt GRAVE MINUS              &mt UNDER MINUS     &kp KP_N7         &mt PAGE_UP KP_N8      &kp KP_N9       &kp KP_MULTIPLY          &td_backspace
+   &kp EQUAL      &mt LC(A) KP_SLASH      &mt LC(S) KP_N4  &mt LC(C) KP_N5   &mt LC(V) KP_N6    &mt LC(KP_PLUS) KP_PLUS      &kp KP_PLUS         &mt HOME KP_N4    &mt PAGE_DOWN KP_N5    &mt END KP_N6   &mt BACKSLASH KP_SLASH   &mt RA(EQUAL) EQUAL 
+   &kp KP_ENTER   &mt LC(Z) EQUAL         &mt LC(X) KP_N1  &mt LBRC KP_N2    &mt LBRC KP_N3     &mt LC(LS(DOWN)) DOT         &kp DOT             &kp KP_N1         &kp KP_N2              &kp KP_N3       &mt RA(EQUAL) TAB        &kp KP_ENTER
+                                                           &kp KP_N0         &lt ARROWS  NUMPAD &kp SPACE                    &kp SPACE           &td_RT_NUM        &kp KP_N0
+
+                        >;
+                };
+
+                symbol_layer {
+                        label = "SYMBOL";
+                        bindings = <
+   &kp ESC        &mt QMARK EXCL    &mt AT PIPE     &mt LPAR LBKT       &mt RPAR RBKT     &mt GRAVE HASH                       &kp KP_MULTIPLY          &kp KP_N7         &mt PAGE_UP KP_N8      &kp KP_N9       &mt UNDER MINUS     &td_backspace
+   &td_ctrl       &mt LC(A) AMPS    &mt LC(S) DLLR  &mac_gst            &mac_xeroGST      &mt LC(KP_PLUS) F4                   &mt BACKSLASH KP_SLASH   &mt HOME KP_N4    &mt PAGE_DOWN KP_N5    &mt END KP_N6   &ht3 0 KP_PLUS      &mt RA(EQUAL) EQUAL 
+   &td_shift      &mt LC(Z) TILDE   &mt LC(X) PRCNT &mt LBRC LT         &mt LBRC GT       &mt LC(LS(DOWN)) F8                  &kp DOT                  &kp KP_N1         &kp KP_N2              &kp KP_N3       &mt RA(EQUAL) RALT  &kp TAB
+                                                    &kp DEL             &tog NUMPAD       &kp SPACE                            &kp SPACE                &td_RT_NUM        &kp KP_N0
+
+                        >;
+                };
+
+                arrows_layer {
+                        label = "ARROWS";
+                        bindings = <
+   &trans       &trans         &none          &kp UP         &none          &trans                                            &trans      &none       &kp UP      &none       &trans   &trans
+   &trans       &trans         &kp LEFT       &kp DOWN       &kp RIGHT      &trans                                            &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &trans   &trans
+   &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans                                            &trans      &none       &none       &none       &trans   &trans
+                                              &bt BT_CLR     &tog ARROWS    &kp SPACE                                         &kp SPACE   &tog ARROWS &trans         
                         >;
                 };
         };
