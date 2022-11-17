@@ -328,7 +328,7 @@ macros {
                 qwerty_layer {
                         label = "QWERTY";
                         bindings = <
-   &td_tab        &mt QMARK Q    &mt AT W       &mt LPAR E        &mt RPAR R        &mt HASH T                                  &kp Y      &kp U       &mt PAGE_UP I        &kp O        &kp P       &td_backspace
+   &kp TAB        &mt QMARK Q    &mt AT W       &mt LPAR E        &mt RPAR R        &mt HASH T                                  &kp Y      &kp U       &mt PAGE_UP I        &kp O        &kp P       &td_backspace
    &td_ctrl       &kp A          &mt LC(S) S    &mt LC(C) D       &mt LC(V) F       &mt LC(KP_PLUS) G                           &kp H      &mt HOME J  &mt PAGE_DOWN K      &mt END L    &kp SEMI    &ht1 0 APOSTROPHE 
    &td_shift      &mt LC(Z) Z    &mt LC(X) X    &mt LBRC C        &mt RBRC V        &mt TILDE  B                                &kp N      &kp M       &td_comma            &kp DOT      &kp RALT    &kp KP_ENTER
                                                 &mt LWIN DEL      &td_LT_QWE        &lt NUMPAD SPACE                            &lt NUMPAD SPACE       &td_RT_QWE           &lt ARROWS TAB
@@ -361,10 +361,10 @@ macros {
                 arrows_layer {
                         label = "ARROWS";
                         bindings = <
-   &trans       &trans         &none          &kp UP         &none          &trans                                            &trans      &none       &kp UP      &none       &trans   &trans
-   &trans       &trans         &kp LEFT       &kp DOWN       &kp RIGHT      &trans                                            &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &trans   &trans
-   &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans                                            &trans      &none       &none       &none       &trans   &trans
-                                              &bt BT_CLR     &tog ARROWS    &kp SPACE                                         &kp SPACE   &tog ARROWS &trans         
+   &bt BT_SEL 1   &none   &none       &kp UP       &none         &none                                                          &none      &none         &kp UP      &none       &none   &bt BT_SEL 4
+   &bt BT_SEL 2   &none   &kp LEFT    &kp DOWN     &kp RIGHT     &none                                                          &none      &kp LEFT      &kp DOWN    &kp RIGHT   &none   &bt BT_SEL 5
+   &bt BT_SEL 3   &none   &none       &none        &none         &none                                                          &none      &none         &none       &none       &none   &bt BT_SEL 6
+                                      &bt BT_CLR   &tog ARROWS   &kp SPACE                                                      &kp SPACE  &tog ARROWS   &none         
                         >;
                 };
         };
