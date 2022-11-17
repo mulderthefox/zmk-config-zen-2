@@ -328,10 +328,10 @@ macros {
                 qwerty_layer {
                         label = "QWERTY";
                         bindings = <
-   &td_tab        &mt QMARK Q    &mt AT W       &mt LPAR E        &mt RPAR R        &mt GRAVE T                              &kp Y      &kp U       &mt PAGE_UP I        &kp O        &kp P       &td_backspace
-   &td_ctrl       &kp A          &mt LC(S) S    &mt LC(C) D       &mt LC(V) F       &mt LC(KP_PLUS) G                        &kp H      &mt HOME J  &mt PAGE_DOWN K      &mt END L    &kp SEMI    &ht1 0 APOSTROPHE 
-   &td_shift      &mt LC(Z) Z    &mt LC(X) X    &mt LBRC C        &mt RBRC V        &mt TILDE  B                             &kp N      &kp M       &td_comma            &kp DOT      &kp RALT    &kp KP_ENTER
-                                                &mt LWIN DEL      &td_LT_QWE        &lt NUMPAD SPACE                         &lt NUMPAD SPACE  &td_RT_QWE  &lt ARROWS TAB
+   &td_tab        &mt QMARK Q    &mt AT W       &mt LPAR E        &mt RPAR R        &mt GRAVE T                                 &kp Y      &kp U       &mt PAGE_UP I        &kp O        &kp P       &td_backspace
+   &td_ctrl       &kp A          &mt LC(S) S    &mt LC(C) D       &mt LC(V) F       &mt LC(KP_PLUS) G                           &kp H      &mt HOME J  &mt PAGE_DOWN K      &mt END L    &kp SEMI    &ht1 0 APOSTROPHE 
+   &td_shift      &mt LC(Z) Z    &mt LC(X) X    &mt LBRC C        &mt RBRC V        &mt TILDE  B                                &kp N      &kp M       &td_comma            &kp DOT      &kp RALT    &kp KP_ENTER
+                                                &mt LWIN DEL      &td_LT_QWE        &lt NUMPAD SPACE                            &lt NUMPAD SPACE       &td_RT_QWE           &lt ARROWS TAB
 
                         >;
                 };
@@ -339,10 +339,10 @@ macros {
                 numpad_layer {
                         label = "NUMPAD";
                         bindings = <
-   &td_backspace         &mt QMARK KP_MULTIPLY   &mt AT KP_N7     &mt LPAR KP_N8    &mt RPAR KP_N9     &mt GRAVE MINUS              &mt UNDER MINUS     &kp KP_N7         &mt PAGE_UP KP_N8      &kp KP_N9       &kp KP_MULTIPLY          &td_backspace
-   &mt RA(EQUAL) EQUAL   &mt LC(A) KP_SLASH      &mt LC(S) KP_N4  &mt LC(C) KP_N5   &mt LC(V) KP_N6    &mt LC(KP_PLUS) KP_PLUS      &kp KP_PLUS         &mt HOME KP_N4    &mt PAGE_DOWN KP_N5    &mt END KP_N6   &mt BACKSLASH KP_SLASH   &mt RA(EQUAL) EQUAL 
-   &kp KP_ENTER          &mt LC(Z) EQUAL         &mt LC(X) KP_N1  &mt LBRC KP_N2    &mt LBRC KP_N3     &mt LC(LS(DOWN)) DOT         &kp DOT             &kp KP_N1         &kp KP_N2              &kp KP_N3       &mt RA(EQUAL) TAB        &kp KP_ENTER
-                                                           &kp KP_N0         &lt ARROWS  NUMPAD &kp SPACE                    &kp SPACE           &td_RT_NUM        &kp KP_N0
+   &td_backspace         &kp KP_MULTIPLY    &mt AT KP_N7     &mt LPAR KP_N8    &mt RPAR KP_N9     &mt GRAVE MINUS              &mt UNDER MINUS     &kp KP_N7         &mt PAGE_UP KP_N8      &kp KP_N9       &kp KP_MULTIPLY          &td_backspace
+   &mt RA(EQUAL) EQUAL   &kp KP_SLASH       &mt LC(S) KP_N4  &mt LC(C) KP_N5   &mt LC(V) KP_N6    &mt LC(KP_PLUS) KP_PLUS      &kp KP_PLUS         &mt HOME KP_N4    &mt PAGE_DOWN KP_N5    &mt END KP_N6   &mt BACKSLASH KP_SLASH   &mt RA(EQUAL) EQUAL 
+   &kp KP_ENTER          &mt DEL            &mt LC(X) KP_N1  &mt LBRC KP_N2    &mt LBRC KP_N3     &mt LC(LS(DOWN)) DOT         &kp DOT             &kp KP_N1         &kp KP_N2              &kp KP_N3       &mt RA(EQUAL) TAB        &kp KP_ENTER
+                                                             &kp KP_N0         &lt ARROWS NUMPAD  &kp SPACE                    &kp SPACE           &td_RT_NUM        &kp KP_N0
 
                         >;
                 };
@@ -350,10 +350,10 @@ macros {
                 symbol_layer {
                         label = "SYMBOL";
                         bindings = <
-   &kp ESC        &mt QMARK EXCL    &mt AT PIPE     &mt LPAR LBKT       &mt RPAR RBKT     &mt GRAVE HASH                       &kp KP_MULTIPLY          &kp KP_N7         &mt PAGE_UP KP_N8      &kp KP_N9       &mt UNDER MINUS     &td_backspace
-   &td_ctrl       &mt LC(A) AMPS    &mt LC(S) DLLR  &mac_gst            &mac_xeroGST      &mt LC(KP_PLUS) F4                   &mt BACKSLASH KP_SLASH   &mt HOME KP_N4    &mt PAGE_DOWN KP_N5    &mt END KP_N6   &ht3 0 KP_PLUS      &mt RA(EQUAL) EQUAL 
-   &td_shift      &mt LC(Z) TILDE   &mt LC(X) PRCNT &mt LBRC LT         &mt LBRC GT       &mt LC(LS(DOWN)) F8                  &kp DOT                  &kp KP_N1         &kp KP_N2              &kp KP_N3       &mt RA(EQUAL) RALT  &kp TAB
-                                                    &kp DEL             &tog NUMPAD       &kp SPACE                            &kp SPACE                &td_RT_NUM        &kp KP_N0
+   &kp ESC        &mt QMARK EXCL    &mt AT PIPE     &mt LPAR LBKT       &mt RPAR RBKT     &mt GRAVE HASH                       &kp PIPE    &kp F7    &kp F8   &kp F9   &mt UNDER MINUS     &td_backspace
+   &td_ctrl       &mt LC(A) AMPS    &mt LC(S) DLLR  &mac_gst            &mac_xeroGST      &mt LC(KP_PLUS) F4                   &mt CARET   &kp F4    &kp F5   &kp F6   &ht3 0 KP_PLUS      &mt RA(EQUAL) EQUAL 
+   &td_shift      &mt LC(Z) TILDE   &mt LC(X) PRCNT &mt LBRC LT         &mt LBRC GT       &mt LC(LS(DOWN)) F8                  &kp TILDE   &kp F1    &kp F2   &kp F3   &kp KP_N3           &mt RA(EQUAL) RALT  &kp TAB
+                                                    &kp DEL             &tog NUMPAD       &kp SPACE                            &kp SPACE   &td_RT_NUM   &kp KP_N0
 
                         >;
                 };
