@@ -362,9 +362,9 @@ macros {
                 arrows_layer {
                         label = "ARROWS";
                         bindings = <
-   &bt BT_SEL 0   &none   &none       &kp UP       &none         &none                                                          &none      &none         &kp UP      &none       &none   &bt BT_SEL 3
-   &bt BT_SEL 1   &none   &kp LEFT    &kp DOWN     &kp RIGHT     &none                                                          &none      &kp LEFT      &kp DOWN    &kp RIGHT   &none   &bt BT_SEL 4
-   &bt BT_SEL 2   &none   &none       &none        &none         &none                                                          &none      &none         &none       &none       &none   &bt BT_SEL 5
+   &bt BT_SEL 0   &none   &none       &kp UP       &none         &none                                                          &none         &none         &kp UP      &none       &none   &bt BT_SEL 3
+   &bt BT_SEL 1   &none   &kp LEFT    &kp DOWN     &kp RIGHT     &none                                                          &none         &kp LEFT      &kp DOWN    &kp RIGHT   &none   &bt BT_SEL 4
+   &bt BT_SEL 2   &none   &none       &none        &none         &none                                                          &tog GAMING   &none         &none       &none       &none   &bt BT_SEL 5
                                       &bt BT_CLR   &tog ARROWS   &kp SPACE                                                      &kp SPACE  &tog ARROWS   &none         
                         >;
                 };
