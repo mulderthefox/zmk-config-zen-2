@@ -352,7 +352,7 @@ macros {
                         label = "SYMBOL";
                         bindings = <
    &kp ESC        &mt QMARK EXCL    &mt AT PIPE     &mt LPAR LBKT       &mt RPAR RBKT     &mt GRAVE PIPE                       &none   &kp F7    &kp F8   &kp F9   &mt UNDER MINUS     &td_backspace
-   &td_ctrl       &mt LC(A) AMPS    &mt LC(S) DLLR  &mac_gst            8      &mt LC(KP_PLUS) F4                   &none   &kp F4    &kp F5   &kp F6   &ht3 0 KP_PLUS      &mt RA(EQUAL) EQUAL 
+   &td_ctrl       &mt LC(A) AMPS    &mt LC(S) DLLR  &mac_gst            &mac_xeroGST      &mt LC(KP_PLUS) F4                   &none   &kp F4    &kp F5   &kp F6   &ht3 0 KP_PLUS      &mt RA(EQUAL) EQUAL 
    &td_shift      &mt LC(Z) TILDE   &mt LC(X) PRCNT &mt LBRC LT         &mt LBRC GT       &mt LC(LS(DOWN)) F8                  &none   &kp F1    &kp F2   &kp F3   &kp KP_N3           &mt RA(EQUAL) RALT  &kp TAB
                                                     &kp DEL             &tog NUMPAD       &kp SPACE                            &none   &td_RT_NUM   &kp KP_N0
 
