@@ -372,10 +372,10 @@ macros {
                gaming_layer {
                         label = "GAMING";
                         bindings = <
-   &kp TAB      &kp Q    &kp W    &kp E    &kp R    &kp T                                                                       &tog QWERTY   &none         &kp UP      &none      &none    &td_backspace
+   &kp TAB      &kp Q    &kp W    &kp E    &kp R    &kp T                                                                       &tog GAMING   &none         &kp UP      &none      &none    &td_backspace
    &kp LCTRL    &kp A    &kp S    &kp D    &kp F    &kp G                                                                       &none         &kp LEFT      &kp DOWN   &kp RIGHT   &none    &none 
    &kp LSHIFT   &kp Z    &kp X    &kp C    &kp V    &kp B                                                                       &none         &none         &none      &none       &none    &none
-                     &tog QWERTY    &mo SYMBOL      &kp SPACE                                                                   &lt NUMPAD SPACE       &td_RT_QWE           &lt ARROWS TAB
+                     &tog QWERTY    &mo SYMBOL      &kp SPACE                                                                   &to QWERTY    &td_RT_QWE           &lt ARROWS TAB
 
                         >;
                 };
