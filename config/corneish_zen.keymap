@@ -374,7 +374,7 @@ macros {
                         bindings = <
    &kp TAB      &kp Q    &kp W    &kp E    &kp R    &kp T                                  &kp Y      &kp U       &mt PAGE_UP I        &kp O        &kp P       &td_backspace
    &kp LCTRL    &kp A    &kp S    &kp D    &kp F    &kp G                           &kp H      &mt HOME J  &mt PAGE_DOWN K      &mt END L    &kp SEMI    &ht1 0 APOSTROPHE 
-   &kp SHIFT    &kp Z    &kp X    &kp C    &kp V    &kp B                                &kp N      &kp M       &td_comma            &kp DOT      &kp RALT    &kp KP_ENTER
+   &kp LSHIFT   &kp Z    &kp X    &kp C    &kp V    &kp B                                &kp N      &kp M       &td_comma            &kp DOT      &kp RALT    &kp KP_ENTER
                      &tog QWERTY    &td_LT_QWE      &kp SPACE                            &lt NUMPAD SPACE       &td_RT_QWE           &lt ARROWS TAB
 
                         >;
