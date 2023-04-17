@@ -341,11 +341,17 @@ combos {
             bindings = <&kp LEFT_ALT &kp KP_N1>;
         };
 
-         combo_reffilter {
+        combo_reffilter {
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&kp LEFT_ALT &kp KP_N2>;
-        };     
+        }; 
+
+        combo_comma {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp LEFT_ALT &kp KP_N6>;
+        }; 
 
         combo_pstvlu {
             timeout-ms = <50>;
