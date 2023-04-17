@@ -335,11 +335,25 @@ combos {
       // Left-hand combos
  //     COMBO(U_PSTE, 15 16)
 
+        combo_clrfilter {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp LEFT_ALT &kp KP_N1>;
+        };
+
+         combo_reffilter {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp LEFT_ALT &kp KP_N2>;
+        };     
+
         combo_pstvlu {
             timeout-ms = <50>;
-            key-positions = <14 15>;
-            bindings = <&kp LEFT_ALT &kp 0 &kp K &kp V>;
+            key-positions = <15 16>;
+            bindings = <&kp LEFT_ALT &kp KP_N9 &kp V>;
         };
+
+
 
       // Right-hand combos
 
