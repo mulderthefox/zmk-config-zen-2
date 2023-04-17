@@ -318,8 +318,8 @@ macros {
  *       Alt Codes   
  */
 
-        mac_pstvlu: mac_pstvlu {
-            label = "MAC_PSTVLU";
+        mac_Comma: mac_comma {
+            label = "MAC_COMMA";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -350,7 +350,7 @@ combos {
         combo_comma {
             timeout-ms = <50>;
             key-positions = <14 15>;
-            bindings = <&mac_pstvlu>;
+            bindings = <&mac_Comma>;
         }; 
 
         combo_pstvlu {
