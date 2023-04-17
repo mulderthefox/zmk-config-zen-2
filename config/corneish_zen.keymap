@@ -286,9 +286,6 @@ macros {
                  ;
         };
     
-
-    };
- 
 /*       
  *       GST   
  *
@@ -316,6 +313,8 @@ macros {
             bindings
                 = <&macro_tap &kp LC(A) &kp LC(C) &kp TAB &kp G &kp S &kp T &kp TAB &kp KP_N1 &kp TAB &kp LC(V) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp END &kp MINUS &kp LC(V) &kp TAB >;
         };
+
+};
 
 combos {
       compatible = "zmk,combos";
