@@ -15,6 +15,8 @@
 #define ARROWS 3
 #define GAMING 4
 
+#define U_PSTE  RS(LC(V))
+
 &mt {
     tapping-term-ms = <250>;
     flavor = "tap-preferred";
@@ -314,6 +316,17 @@ macros {
             bindings
                 = <&macro_tap &kp LC(A) &kp LC(C) &kp TAB &kp G &kp S &kp T &kp TAB &kp KP_N1 &kp TAB &kp LC(V) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp END &kp MINUS &kp LC(V) &kp TAB >;
         };
+
+combos {
+      compatible = "zmk,combos";
+      
+      // Left-hand combos
+      COMBO(U_PSTE, 12 13)
+
+
+      // Right-hand combos
+
+    };
 
 /*       
  *      KEYMAP                            =====================================================================
