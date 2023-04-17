@@ -321,7 +321,7 @@ combos {
       compatible = "zmk,combos";
       
       // Left-hand combos
-      COMBO(U_PSTE, 15 16)
+ //     COMBO(U_PSTE, 15 16)
 
 
       // Right-hand combos
