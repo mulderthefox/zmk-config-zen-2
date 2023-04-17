@@ -15,7 +15,7 @@
 #define ARROWS 3
 #define GAMING 4
 
-#define U_PSTE  RS(LC(V))
+#define U_PSTE RS(LC(V))
 
 &mt {
     tapping-term-ms = <250>;
@@ -321,7 +321,7 @@ combos {
       compatible = "zmk,combos";
       
       // Left-hand combos
-      COMBO(U_PSTE, 12 13)
+      COMBO(U_PSTE, 15 16)
 
 
       // Right-hand combos
