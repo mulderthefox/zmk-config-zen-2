@@ -314,6 +314,19 @@ macros {
                 = <&macro_tap &kp LC(A) &kp LC(C) &kp TAB &kp G &kp S &kp T &kp TAB &kp KP_N1 &kp TAB &kp LC(V) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp LS(TAB) &kp END &kp MINUS &kp LC(V) &kp TAB >;
         };
 
+/*       
+ *       Alt Codes   
+ */
+
+        mac_pstvlu: mac_pstvlu {
+            label = "MAC_PSTVLU";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LEFT_ALT &kp 0 &kp K &kp V>;
+        };
+
+
 };
 
 combos {
@@ -324,8 +337,8 @@ combos {
 
         combo_pstvlu {
             timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp LS(LC(V))>;
+            key-positions = <14 15>;
+            bindings = <&kp LEFT_ALT &kp 0 &kp K &kp V>;
         };
 
       // Right-hand combos
