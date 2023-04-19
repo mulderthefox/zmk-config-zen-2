@@ -331,9 +331,8 @@ macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LEFT_ALT &kp KP_N9>
-                , <&macro_wait_time 500>
-                , <&macro_tap &kp V>;
+                = <&macro_tap &kp LEFT_ALT &kp KP_N0 &kp KP_N9 &kp V>;
+
         };
 
 };
