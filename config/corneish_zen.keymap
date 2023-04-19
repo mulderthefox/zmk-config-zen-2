@@ -374,8 +374,8 @@ combos {
         combo_arrowLayer {
             timeout-ms = <50>;
             key-positions = <37 38>;
-            bindings = &kp KP_N9;
- //                     <&mo ARROWS>
+            bindings = <&kp KP_N9>;
+ //                    <&mo ARROWS>
         }; 
 
 
