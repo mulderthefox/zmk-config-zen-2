@@ -332,7 +332,6 @@ macros {
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LEFT_ALT &kp KP_N0 &kp KP_N9 &kp V>;
-
         };
 
 };
@@ -371,6 +370,14 @@ combos {
             key-positions = <14 15 16>;
             bindings = <&mac_xeroGST>;
         }; 
+
+        combo_arrowLayer {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = &kp KP_N9;
+ //                     <&mo ARROWS>
+        }; 
+
 
       // Right-hand combos
 
