@@ -380,6 +380,12 @@ combos {
 
       // Right-hand combos
 
+      combo_xeroGST {
+            timeout-ms = <50>;
+            key-positions = <19 20 21>;
+            bindings = <&mac_xeroGST>;
+        }; 
+
     };
 
 /*       
